@@ -1,0 +1,61 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {
+      colors: {
+        lavender: "#eee9f6",
+        white: "#fff",
+        gray: {
+          "100": "#767676",
+          "200": "rgba(255, 255, 255, 0)",
+          "300": "rgba(255, 255, 255, 0.9)",
+          "400": "rgba(255, 255, 255, 0.63)",
+          "500": "rgba(255, 255, 255, 0.67)",
+          "600": "rgba(255, 255, 255, 0.75)",
+        },
+        darkslateblue: {
+          "100": "#242757",
+          "200": "rgba(36, 39, 87, 0.4)",
+          "300": "rgba(36, 39, 87, 0.6)",
+        },
+        salmon: "#ec6060",
+        indianred: "#ee6370",
+        navajowhite: "#ffe29c",
+        plum: "#a68ed4",
+        orange: "#ffb400",
+        black: "#000",
+        lightpink: "#ffbcbc",
+        khaki: "#f2d388",
+        paleturquoise: "#aae3e2",
+        darkslategray: "#242d3f",
+        cornflowerblue: "#40a9ff",
+      },
+      fontFamily: {
+        "open-sans": "'Open Sans'",
+        poppins: "Poppins",
+        roboto: "Roboto",
+        inter: "Inter",
+      },
+      borderRadius: {
+        xxs: "5px",
+        small: "10px",
+        base: "20px",
+        large: "30px",
+        xxl: "50px",
+      },
+    },
+    fontSize: {
+      base: "12px",
+      lg: "14px",
+      xl: "15px",
+      "2xl": "16px",
+      "3xl": "20px",
+      "4xl": "28px",
+      "5xl": "32px",
+      "6xl": "36px",
+      "7xl": "48px",
+    },
+  },
+  corePlugins: { preflight: false },
+};
