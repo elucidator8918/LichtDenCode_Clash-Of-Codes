@@ -17,7 +17,7 @@ class SentimentalModelAPI(APIView):
         scores_neutral = []
         scores_compound = []
         sentence_sentiment_score = sid.polarity_scores(request.data.get('sentence','no'))    
-        scores_negative.append(round(sentence_sentiment_score['neg']*100))
+        scores_negative.append(sentence_sentiment_score['neg']*100)
         scores_positive.append(sentence_sentiment_score['neu']*100)
         scores_neutral.append(sentence_sentiment_score['pos']*100)
         scores_compound.append(sentence_sentiment_score['compound']*100)
