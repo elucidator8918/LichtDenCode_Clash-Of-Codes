@@ -36,6 +36,8 @@ urlpatterns = [
     path('',schema_view.with_ui(cache_timeout=0), name='schema-json'),
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
+    path('swipe/', include('swipe_system.urls')),
+    path('sentimental/', include('deploy_model.urls')),
 ]
 
 if settings.DEBUG:

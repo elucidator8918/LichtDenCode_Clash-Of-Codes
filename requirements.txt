@@ -6,3 +6,4 @@ pillow
 drf-yasg
 python-decouple
 django-cors-headers
+nltk

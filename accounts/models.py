@@ -7,6 +7,11 @@ from .managers import UserManager
 class User(AbstractBaseUser):
     First_name = models.CharField(max_length=20, help_text='Enter your First name')
     Last_name = models.CharField(max_length=20, help_text='Enter your Last name')
+    hometown = models.CharField(max_length=120, help_text='Enter your hometown')
+    workplace = models.CharField(max_length=120, help_text='Enter your workplace')
+    interest = models.CharField(max_length=120, help_text='Enter your interest')
+    SEX = models.CharField(max_length=10, help_text='Enter your prefered sex')
+    smoke = models.CharField(max_length=20, help_text='How often u smoke')
     date_of_birth = models.DateField(help_text='Enter your Date of Birth')
     phone = PhoneNumberField(null=True, blank=True, help_text='Enter your Phone Number')
     email = models.EmailField(
@@ -48,3 +53,8 @@ class User(AbstractBaseUser):
     
     def is_verified(self):
         return (self.is_email_verified)
+    #hometown
+    #workplace
+    #interest
+    #SEX
+    #smoke
