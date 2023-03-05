@@ -8,8 +8,37 @@ import {
   FormHelperText,
   Select,
 } from "@mui/material";
+import React,{useState} from 'react'
+import axios from 'axios'
+import { useNavigate } from "react-router-dom";
 
 const Form = () => {
+  const [hometown, setHomeTown] = useState('');
+  const [workplace, setWorkplace] = useState('');
+  const [interests, setInterests] = useState([]);
+  const [sex, setSex] = useState('');
+  const [smoke,setSmoke] =useState('');
+
+  const handleOthers =(e)=>{
+    setInterests(interests.concat(e.target.value))
+  }
+  const handleSubmit =()=>{
+    axios.patch( `http://127.0.0.1:8000/accounts/user/${localStorage.getItem('currentUser')}/`,{
+
+          hometown:hometown,
+          workplace:workplace,
+          SEX:sex,
+          smoke:smoke,
+          interest:interests,
+
+    },
+          {headers:{ Authorization:`Bearer ${localStorage.getItem('token')}` } }
+        ).then(res=>{console.log(res)
+    
+        }).catch(err =>{console.log(err)});
+        navigate("/ProfilePage");
+
+  }
   return (
     <div className="relative bg-lavender w-full h-[1117px] overflow-hidden text-left text-lg text-black font-poppins">
       <img
@@ -94,8 +123,13 @@ const Form = () => {
         alt=""
         src="../rectangle-301@2x.png"
       />
+
+
+
+
+
       <div className="absolute top-[55px] left-[63px] rounded-base bg-darkslateblue-200 w-[545px] h-[1007px]" />
-      <button className="cursor-pointer [border:none] p-0 bg-darkslateblue-100 absolute top-[807px] left-[981px] rounded-large shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[382px] h-[57px]" />
+      <button className="cursor-pointer [border:none] p-0 bg-darkslateblue-100 absolute top-[807px] left-[981px] rounded-large shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[382px] h-[57px]" onClick={handleSubmit} />
       <div className="absolute top-[819px] left-[1061px] text-3xl text-lavender text-center flex items-center justify-center w-[211px] h-8">
         Submit
       </div>
@@ -106,6 +140,7 @@ const Form = () => {
         variant="outlined"
         type="text"
         label="Where is your hometown?"
+        onChange ={(e) => setHomeTown(e.target.value)}
         size="medium"
         margin="none"
       />
@@ -115,6 +150,8 @@ const Form = () => {
         color="secondary"
         variant="outlined"
         type="text"
+        onChange={(e) => setWorkplace(e.target.value)}
+
         label="Where is your workplace?"
         size="medium"
         margin="none"
@@ -140,27 +177,27 @@ const Form = () => {
       <FormControlLabel
         className="absolute top-[620px] left-[981px]"
         label=""
-        control={<Checkbox color="secondary" size="medium" />}
+        control={<Checkbox color="secondary" size="medium" onClick={()=>setInterests(interests.concat('Dancing'))}/>}
       />
       <FormControlLabel
         className="absolute top-[682px] left-[981px]"
         label=""
-        control={<Checkbox color="secondary" size="medium" />}
+        control={<Checkbox color="secondary" size="medium" onClick={()=>setInterests(interests.concat('Sketching'))}/>}
       />
       <FormControlLabel
         className="absolute top-[620px] left-[1118px]"
         label=""
-        control={<Checkbox color="secondary" size="medium" />}
+        control={<Checkbox color="secondary" size="medium" onClick={()=>setInterests(interests.concat('Sports'))} />}
       />
       <FormControlLabel
         className="absolute top-[682px] left-[1118px]"
         label=""
-        control={<Checkbox color="secondary" size="medium" />}
+        control={<Checkbox color="secondary" size="medium" onClick={()=>setInterests(interests.concat('Reading'))}/>}
       />
       <FormControlLabel
         className="absolute top-[620px] left-[1254px]"
         label=""
-        control={<Checkbox color="secondary" size="medium" />}
+        control={<Checkbox color="secondary" size="medium" onClick={()=>setInterests(interests.concat('Singing'))}/>}
       />
       <FormControl
         className="absolute top-[516px] left-[981px]"
@@ -183,7 +220,7 @@ const Form = () => {
         variant="outlined"
       >
         <InputLabel color="secondary">Sexual Preference</InputLabel>
-        <Select color="secondary" size="medium" label="Sexual Preference">
+        <Select color="secondary" size="medium" label="Sexual Preference" onChange ={(e) => setSex(e.target.value)}>
           <MenuItem value="Male (M)">Male (M)</MenuItem>
           <MenuItem value="Female (F)">Female (F)</MenuItem>
           <MenuItem value="Others">Others</MenuItem>
@@ -209,7 +246,7 @@ const Form = () => {
         variant="outlined"
       >
         <InputLabel color="secondary">Do you smoke?</InputLabel>
-        <Select color="secondary" size="medium" label="Do you smoke?">
+        <Select color="secondary" size="medium" label="Do you smoke?" onChange={(e)=>setSmoke(e.target.value)}>
           <MenuItem value="Never (N)">Never (N)</MenuItem>
           <MenuItem value="Often (O)">Often (O)</MenuItem>
           <MenuItem value="Sometimes (S)">Sometimes (S)</MenuItem>
@@ -225,6 +262,7 @@ const Form = () => {
         label="Others"
         size="medium"
         margin="none"
+        onChange={handleOthers}
       />
       <div className="absolute top-[257px] left-[979px] text-3xl inline-block w-96 h-6">
         Complete your profile and find your perfect match!

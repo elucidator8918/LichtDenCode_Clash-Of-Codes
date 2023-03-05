@@ -13,12 +13,10 @@ const SignUp = () => {
   const [datePickerDateTimePickerValue, setDatePickerDateTimePickerValue] = useState('');
   const navigate = useNavigate();
 
-  const onFrameButtonClick = useCallback(() => {
-    navigate("/form");
-  }, [navigate]);
+
 
   const onFrameButton1Click = useCallback(() => {
-    navigate("/login");
+    
   }, [navigate]);
 
   const handleSubmit = async (e) => {
@@ -41,7 +39,7 @@ const SignUp = () => {
               })
               console.log(response)
       console.log(result)
-    
+      navigate("/form");
     }
 
   return (
@@ -180,39 +178,45 @@ const SignUp = () => {
           margin="none"
           onChange={(e) => setPassword(e.target.value)}
         />
+       
+        <TextField
+          className="[border:none] bg-[transparent] absolute top-[585px] left-[981px]"
+          sx={{ width: 382 }}
+          color="secondary"
+          variant="outlined"
+          type="text"
+          label="Date of birth"
+          size="medium"
+          margin="none"
+          onChange={(e) => setDatePickerDateTimePickerValue(e.target.value)}
+        />
+    
         <FormControlLabel
-          className="absolute top-[567px] left-[1010px]"
+          className="absolute top-[656px] left-[1010px]"
           label=""
           control={<Radio color="secondary" size="medium" />}
         />
-        <div className="absolute top-[578px] left-[1052px] inline-block w-[87px] h-5">
+        <div className="absolute top-[668px] left-[1052px] inline-block w-[87px] h-5">
           Male
         </div>
+        
         <FormControlLabel
-          className="absolute top-[567px] left-[1104px]"
+          className="absolute top-[657px] left-[1104px]"
           label=""
           control={<Radio color="secondary" size="medium" />}
         />
-        <div className="absolute top-[578px] left-[1146px] inline-block w-[87px] h-5">
+        <div className="absolute top-[668px] left-[1146px] inline-block w-[87px] h-5">
           Female
         </div>
         <FormControlLabel
-          className="absolute top-[566px] left-[1204px]"
+          className="absolute top-[656px] left-[1204px]"
           label=""
           control={<Radio color="secondary" size="medium" />}
         />
-        <div className="absolute top-[577px] left-[1246px] inline-block w-[87px] h-5">
+        <div className="absolute top-[667px] left-[1246px] inline-block w-[87px] h-5">
           Others
         </div>
-        <div className="absolute top-[626px] left-[981px]">
-        <input
-            type="text"
-            id="date"
-            className="border border-gray-400 p-2  bg-purple-200 w-full"
-            value={datePickerDateTimePickerValue}
-            onChange={(e) => setDatePickerDateTimePickerValue(e.target.value)}
-          />
-        </div>
+        
         
         <button
           className="cursor-pointer [border:none] p-0 bg-[transparent] absolute top-[726px] left-[982px] w-[381px] h-[61px] overflow-hidden" type="submit"

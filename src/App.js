@@ -9,6 +9,8 @@ import Login from "./pages/Login";
 import Form from "./pages/Form";
 import SignUp from "./pages/SignUp";
 import { useEffect } from "react";
+import ProfilePage from "./pages/ProfilePage";
+import Home from "./pages/Home";
 
 function App() {
   const action = useNavigationType();
@@ -67,7 +69,11 @@ function App() {
 
       <Route path="/form" element={<Form />} />
 
+      <Route path="/ProfilePage" element={<ProfilePage />} />
+
       <Route path="/sign-up" element={<SignUp />} />
+      
+      <Route path="/home" element={<Home />}/>
     </Routes>
    
   );

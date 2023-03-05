@@ -1,6 +1,8 @@
 import { TextField } from "@mui/material";
 import React,{useState} from "react";
 import axios from 'axios'
+import { useNavigate } from "react-router-dom";
+
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -14,12 +16,15 @@ const Login = () => {
           console.log(result)
           const token = result.data.access
           console.log(token)
+          localStorage.setItem('token',token)
           axios.get('http://127.0.0.1:8000/accounts/user/', {
             headers: {
               Authorization: `Bearer ${token}`
             }
           }).then(result => {
             console.log(result.data)
+            localStorage.setItem('currentUser',result.data.id)
+            navigate("/home");
           }).catch(error => {
             console.log(error)
           })
