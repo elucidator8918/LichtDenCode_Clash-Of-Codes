@@ -11,6 +11,8 @@ import SignUp from "./pages/SignUp";
 import { useEffect } from "react";
 import ProfilePage from "./pages/ProfilePage";
 import Home from "./pages/Home";
+import MatchingParty from "./pages/MatchingParty";
+import Contact from "./pages/Contact";
 
 function App() {
   const action = useNavigationType();
@@ -74,6 +76,11 @@ function App() {
       <Route path="/sign-up" element={<SignUp />} />
       
       <Route path="/home" element={<Home />}/>
+
+      <Route path="/mparty" element={<MatchingParty />}/>
+
+      <Route path="/contacts" element={<Contact />}/>
+
     </Routes>
    
   );

@@ -255,7 +255,7 @@ const LandingPage = () => {
             Matching Party
           </div>
           <div className="absolute top-[55px] left-[825px] flex items-center justify-center w-[211px] h-8">
-            Contact
+          <a href="/contacts">Contact</a>
           </div>
           <div className="absolute top-[55px] left-[1079px] flex items-center justify-center w-[211px] h-8">
             Login
@@ -540,7 +540,7 @@ const LandingPage = () => {
         </div>
         <div className="absolute top-[788px] left-[1049px] rounded-large bg-gray-200 shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] box-border w-[177px] h-[50px] border-[1px] border-solid border-white" />
         <div className="absolute top-[801px] left-[1015px] text-white text-center flex items-center justify-center w-[244px] h-6">
-          Contact Us
+        <a href="/contacts">Contact Us</a>
         </div>
         <img
           className="absolute top-[680px] left-[185px] rounded-large w-[261.19px] h-[271px] object-cover"
@@ -580,7 +580,7 @@ const LandingPage = () => {
           Home
         </div>
         <div className="absolute top-[260px] left-[819px] font-semibold text-gray-600 flex items-center justify-center w-[147px] h-[43px]">
-          Contact
+          <a href="/contacts">Contact</a>
         </div>
         <img
           className="absolute h-[7.47%] w-[2.43%] top-[75.07%] right-[10.42%] bottom-[17.46%] left-[87.15%] max-w-full overflow-hidden max-h-full"

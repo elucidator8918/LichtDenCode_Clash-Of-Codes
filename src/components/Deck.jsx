@@ -51,9 +51,9 @@ const objs = [
 
 const to = i => ({
   x: 0,
-  y: i * -10,
-  scale: 1,
-  rot: -10 + Math.random() * 20,
+  y: i * -1,
+  scale: 0.3,
+  rot: -1 + Math.random() * 2,
   delay: i * 100
 });
 const from = i => ({ rot: 0, scale: 1.5, y: -1000 });

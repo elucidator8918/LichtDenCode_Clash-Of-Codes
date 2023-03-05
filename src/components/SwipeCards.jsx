@@ -10,6 +10,7 @@ class SwipeCard extends React.Component {
     return (
       <animated.div
         key={i}
+        className="absolute justify-center h-screen w-full"
         style={{
           transform: to(
             [x, y],
@@ -29,10 +30,7 @@ class SwipeCard extends React.Component {
                 <img src={pic} alt="profilePicture" />
               ))}
             </Carousel>
-            <h2>{name},</h2>
-            <h2>{age}</h2>
-            <h5>{distance}</h5>
-            <h5>{text}</h5>
+            
           </div>
         </animated.div>
       </animated.div>

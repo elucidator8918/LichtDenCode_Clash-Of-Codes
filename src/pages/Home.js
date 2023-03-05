@@ -9,6 +9,7 @@ import {
   Icon,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import Deck from "../components/Deck"
 
 const Home = () => {
   const navigate = useNavigate();
@@ -22,6 +23,7 @@ const Home = () => {
   }, [navigate]);
 
   return (
+    
     <div className="relative bg-lavender w-full h-[1024px] overflow-hidden text-left text-5xl text-black font-poppins">
       <button
         className="cursor-pointer [border:none] p-0 bg-[transparent] absolute top-[67px] left-[366px] text-3xl font-poppins text-plum text-center flex items-center justify-center w-[211px] h-8"
@@ -35,7 +37,7 @@ const Home = () => {
       <button className="cursor-pointer [border:none] p-0 bg-[transparent] absolute top-[67px] left-[680px] text-3xl font-poppins text-plum text-center flex items-center justify-center w-[211px] h-8">
         Matching Party
       </button>
-      <button className="cursor-pointer [border:none] p-0 bg-[transparent] absolute top-[67px] left-[846px] text-3xl font-poppins text-plum text-center flex items-center justify-center w-[211px] h-8">
+      <button className="cursor-pointer [border:none] p-0 bg-[transparent] absolute top-[67px] left-[846px] text-3xl font-poppins text-plum text-center flex items-center justify-center w-[211px] h-8" onClick={navigate('/contacts')}>
         Contact
       </button>
       <img
@@ -103,10 +105,11 @@ const Home = () => {
       <button className="cursor-pointer [border:none] p-0 bg-[transparent] absolute top-[560px] left-[687px] text-3xl font-poppins text-gray-100 text-left inline-block w-[383px] h-[63px]">
         {}
       </button>
+      
       <img
         className="absolute top-[480px] left-[144px] rounded-base w-[460px] h-[437px] object-cover"
         alt=""
-        src={<Deck/>}
+        src="../rectangle-85@2x.png"
       />
       <img
         className="absolute top-[895px] left-[323px] w-[68px] h-[68px]"
