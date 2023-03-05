@@ -5,10 +5,10 @@ import axios from 'axios'
 const MatchingParty = () => {
   const navigate = useNavigate();
   const handleSubmit=()=>{
-    axios.post('http://127.0.0.1:8000/swipe/mail_party/')
+   const resposne = axios.post('http://127.0.0.1:8000/swipe/party_mail')
   }
   const onAboutUsClick = useCallback(() => {
-    navigate("/landing-page");
+    navigate("/");
   }, [navigate]);
 
   const onHomeClick = useCallback(() => {

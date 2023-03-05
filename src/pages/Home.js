@@ -8,14 +8,14 @@ import {
   Button,
   Icon,
 } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import Imageslider from "../components/Imageslider";
 
 const Home = () => {
   const navigate = useNavigate();
 
   const onAboutUsClick = useCallback(() => {
-    navigate("/landing-page");
+    navigate("/");
   }, [navigate]);
 
   const onFrameButton3Click = useCallback(() => {
@@ -34,7 +34,7 @@ const Home = () => {
         Home
       </button>
       <button className="cursor-pointer [border:none] p-0 bg-[transparent] absolute top-[67px] left-[680px] text-base font-poppins text-plum text-center flex items-center justify-center w-[211px] h-8">
-        Matching Party
+        <a href="/mparty">Matching Party</a>
       </button>
       <button className="cursor-pointer [border:none] p-0 bg-[transparent] absolute top-[67px] left-[846px] text-base font-poppins text-plum text-center flex items-center justify-center w-[211px] h-8">
         Contact
@@ -46,7 +46,7 @@ const Home = () => {
       />
       <div className="absolute top-[63px] left-[1100px] rounded-large bg-darkslateblue-100 shadow-[0px_2px_4px_rgba(0,_0,_0,_0.25)] w-48 h-[42px]" />
       <div className="absolute top-[68px] left-[1089px] text-3xs text-lavender text-center flex items-center justify-center w-[211px] h-8">
-        <a href="http://127.0.0.1:8000/payment/">Subscribe</a>
+        Subscribe
       </div>
       <button className="cursor-pointer [border:none] p-0 bg-[transparent] absolute top-[60px] left-[1101px] w-[191px] h-[45px] overflow-hidden" />
       <img
@@ -112,7 +112,7 @@ const Home = () => {
       />
      
       <button className="cursor-pointer [border:none] p-0 bg-[transparent] absolute top-[512px] left-[631px] text-2xl font-bold font-poppins text-darkslateblue-100 text-left flex items-center w-[363px] h-8">
-        Mike Johnson
+       Arjun
       </button>
       <button className="cursor-pointer [border:none] p-0 bg-[transparent] absolute top-[784px] left-[667px] text-[64px] font-bold font-poppins text-orange text-center flex items-center justify-center w-[363px] h-[85px]">
         70/100

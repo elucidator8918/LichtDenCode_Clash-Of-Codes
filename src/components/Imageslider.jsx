@@ -42,8 +42,8 @@ function Imageslider() {
     <div >
       <div>      
         <img className="absolute top-[480px] left-[144px] rounded-base w-[460px] h-[437px] object-cover" src={images[currentImage]} alt={`Image ${currentImage}`} {...handlers} />
-        <button className="absolute top-[880px] left-[177px] w-[98px] h-[98px] bg-[#EC6060] rounded-full" onClick={handlePrevClick} disabled={currentImage === 0}>Prev</button>
-        <button className="absolute top-[880px] left-[439px] w-[98px] h-[98px] rounded-full bg-[#60ECCB]" onClick={handleNextClick} disabled={currentImage === images.length - 1}>Next</button>
+        <button className="absolute top-[880px] left-[177px] w-[98px] h-[98px] bg-[#EC6060] rounded-full" onClick={handlePrevClick} disabled={currentImage === 0}></button>
+        <button className="absolute top-[880px] left-[439px] w-[98px] h-[98px] rounded-full bg-[#60ECCB]" onClick={handleNextClick} disabled={currentImage === images.length - 1}></button>
       </div>
       <div >
         {initialImages.map((image, index) => (

@@ -6,7 +6,7 @@ const Contact = () => {
   const navigate = useNavigate();
 
   const onAboutUsClick = useCallback(() => {
-    navigate("/landing-page");
+    navigate("/");
   }, [navigate]);
 
   const onHomeClick = useCallback(() => {

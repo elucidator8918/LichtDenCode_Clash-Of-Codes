@@ -18,6 +18,7 @@ const Form = () => {
   const [interests, setInterests] = useState([]);
   const [sex, setSex] = useState('');
   const [smoke,setSmoke] =useState('');
+  const navigate = useNavigate();
 
   const handleOthers =(e)=>{
     setInterests(interests.concat(e.target.value))
