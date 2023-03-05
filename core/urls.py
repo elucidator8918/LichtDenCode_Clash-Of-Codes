@@ -38,6 +38,7 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('swipe/', include('swipe_system.urls')),
     path('sentimental/', include('deploy_model.urls')),
+    path('payment/',include('base.urls'))
 ]
 
 if settings.DEBUG:
