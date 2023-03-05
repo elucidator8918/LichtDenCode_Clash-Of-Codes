@@ -22,3 +22,12 @@ class SentimentalModelAPI(APIView):
         scores_neutral.append(sentence_sentiment_score['pos']*100)
         scores_compound.append(sentence_sentiment_score['compound']*100)
         return Response({'-ve':scores_negative,'+ve':scores_positive,'meh':scores_neutral,'avg':scores_compound})
+
+class Recommand(APIView):
+    def get(self, request):
+        dicty={}
+        songs = ['One Chance','MetaMorphosis','Demons in my soul','Wake Up!','Don\'t let the light go out']
+        score = [42,37,37,36,35]
+        for i in range(0,5):
+            dicty[i] = {'spotify':songs[i],'score':score[i]}
+        return Response(dicty)
