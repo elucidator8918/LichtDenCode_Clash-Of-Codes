@@ -46,7 +46,7 @@ const Home = () => {
       />
       <div className="absolute top-[63px] left-[1100px] rounded-large bg-darkslateblue-100 shadow-[0px_2px_4px_rgba(0,_0,_0,_0.25)] w-48 h-[42px]" />
       <div className="absolute top-[68px] left-[1089px] text-3xs text-lavender text-center flex items-center justify-center w-[211px] h-8">
-        <a href="http://127.0.0.1:8000/payment">Subscribe</a>
+        <a href="http://127.0.0.1:8000/payment/">Subscribe</a>
       </div>
       <button className="cursor-pointer [border:none] p-0 bg-[transparent] absolute top-[60px] left-[1101px] w-[191px] h-[45px] overflow-hidden" />
       <img
