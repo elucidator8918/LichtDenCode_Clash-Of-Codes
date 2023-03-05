@@ -39,13 +39,13 @@ function Imageslider() {
   };
 
   return (
-    <div className="flex flex-col items-center">
-      <div className="flex justify-center items-center">
-        <button className="mr-4 bg-gray-300 px-2 py-1 rounded-lg" onClick={handlePrevClick} disabled={currentImage === 0}>Prev</button>
-        <img className="max-w-xs md:max-w-md" src={images[currentImage]} alt={`Image ${currentImage}`} {...handlers} />
-        <button className="ml-4 bg-gray-300 px-2 py-1 rounded-lg" onClick={handleNextClick} disabled={currentImage === images.length - 1}>Next</button>
+    <div >
+      <div>      
+        <img className="absolute top-[480px] left-[144px] rounded-base w-[460px] h-[437px] object-cover" src={images[currentImage]} alt={`Image ${currentImage}`} {...handlers} />
+        <button className="absolute top-[880px] left-[177px] w-[98px] h-[98px] bg-[#EC6060] rounded-full" onClick={handlePrevClick} disabled={currentImage === 0}>Prev</button>
+        <button className="absolute top-[880px] left-[439px] w-[98px] h-[98px] rounded-full bg-[#60ECCB]" onClick={handleNextClick} disabled={currentImage === images.length - 1}>Next</button>
       </div>
-      <div className="flex mt-4">
+      <div >
         {initialImages.map((image, index) => (
           <div key={index} className={`h-2 w-2 rounded-full mx-2 ${currentImage === index ? 'bg-gray-800' : 'bg-gray-400'}`} onClick={() => setCurrentImage(index)} />
         ))}
